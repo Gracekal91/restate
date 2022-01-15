@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { Container, Button, ButtonGroup } from 'react-bootstrap'
 import { HiOutlineSearchCircle } from 'react-icons/hi'
 import Rent from '../rent/Rent';
-import Sale from '../Sale';
+import Sale from '../buy/Sale';
 
 
 

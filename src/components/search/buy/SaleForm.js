@@ -3,23 +3,24 @@ import { HiOutlineSearchCircle } from 'react-icons/hi'
 import { useState } from 'react'
 
 
-const RentForm = ({ forRent }) => {
+const SaleForm = ({ forSale }) => {
 
-    let minPrices = [1000, 1500, 2000, 3000, 4000, 5000, 6000, 8000, 9000, 10000];
-    let maxPrices = [1000, 1500, 2000, 3000, 4000, 5000, 6000, 8000, 9000, 10000, 20000, 30000, 4000, 50000];
-    let baths = forRent.map((item) => { return item.baths });
+    let minPrices = [150000, 200000, 300000, 400000, 500000, 600000, 800000, 900000, 1000000, 200000];
+    let maxPrices = [200000, 300000, 400000, 500000, 600000, 800000, 900000, 1000000, 200000, 300000, 1000000, 2000000];
+
+    let baths = forSale.map((item) => { return item.baths });
     let numberOfBaths = [...new Set(baths)].sort();
 
-    let rooms = forRent.map((item) => { return item.rooms });
+    let rooms = forSale.map((item) => { return item.rooms });
     let numberOfBeds = [...new Set(rooms)].sort();
 
-    let location1 = forRent.map((item) => {
+    let location1 = forSale.map((item) => {
         return item.location[2].name
     })
 
     let cities = [...new Set(location1)]
 
-    let furnishState = forRent.map((item) => {
+    let furnishState = forSale.map((item) => {
         return item.furnishingStatus
     })
 
@@ -108,11 +109,10 @@ const RentForm = ({ forRent }) => {
                         </select>
                     </Col>
                 </Row>
-                <Button stype='submit' onClick={handleSubmit}><HiOutlineSearchCircle style={{ fontSize: '1.2rem', marginBottom: '2px', marginRight: '4px' }} />Search property for rent</Button>
+                <Button stype='submit' className='bg-danger' onClick={handleSubmit}><HiOutlineSearchCircle style={{ fontSize: '1.2rem', marginBottom: '2px', marginRight: '4px' }} />Search property for rent</Button>
             </div>
         </form>
     )
 }
 
-
-export default RentForm
+export default SaleForm

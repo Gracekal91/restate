@@ -1,10 +1,11 @@
 import React from 'react'
-
+import { Form, Row, Col, Button } from 'react-bootstrap'
+import { HiOutlineSearchCircle } from 'react-icons/hi'
 import '../searchResult/searchResult.scss'
-import { Container, Card } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
 import { FaBed, FaBath } from 'react-icons/fa';
 import millify from 'millify';
-import RentForm from './RentForm';
+import SaleForm from './SaleForm';
 
 const Property = ({ property }) => {
     return (
@@ -27,16 +28,15 @@ const Property = ({ property }) => {
     )
 }
 
-const Rent = ({ forRent }) => {
 
-    let filteredForRent = [];
 
+const Sale = ({ forSale }) => {
     return (
         <div>
-            <RentForm forRent={forRent} />
+            <SaleForm forSale={forSale} />
             <div>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '5px' }}>
-                    {forRent.map((property) => {
+                    {forSale.map((property) => {
                         return (
                             <div >
                                 <Property property={property} />
@@ -50,4 +50,4 @@ const Rent = ({ forRent }) => {
     )
 }
 
-export default Rent
+export default Sale
